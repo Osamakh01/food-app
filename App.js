@@ -1,21 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import SearchScreen from './src/screens/SearchScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+//creating a new variable navigator and assigning it the result of createStackNavigator
+//1st argument to this is going to be an object thats goin to list out all the diff routes that our project has 
+//has right now.
+const navigator = createStackNavigator(
+    {
+        Search: SearchScreen,
+
+    }, 
+    {
+        initialRouteName: 'Search',
+        defaultNavigationOptions: {     //this is default option for every screen of the project, either its 
+                                        //header Title or etc.
+        title: 'Business Search'
+        }
+    }
+);
+
+export default createAppContainer(navigator);
+// createAppContainer func essentially creates a default app component/react component and displays whatever
+// content navigator is producing inside of that component
+// in another words createAppContainer just makes sure we actually exports a component from this file.
