@@ -84,7 +84,6 @@ const SearchScreen = () => {
         // price === '$' || '$$' || '$$$'
         
         return results.filter(result => {
-            console.log(result);
             return result.price === price;
             // for every result inside of our results array, we will ask ourselves if the result price is 
             // equal to the price we just passed in as argument
@@ -94,15 +93,6 @@ const SearchScreen = () => {
         
     };
 
-    /*const filterResultsByPrice = price => {
-        // price === '$' || '$$' || '$$$'
-        return [results].filter(result => {
-          return result.price === price;
-        });
-      };*/
-
-
-//console.log(results);
 
       /* flex:1 so that the whole VIEW would not expand, only fillup to the space available on the screen
     return <View style={{ flex:1 }}> */

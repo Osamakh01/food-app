@@ -16,7 +16,7 @@ export default () => {
 
     // helper func
     const searchApi = async (searchTerm) => {
-        console.log('hello ')
+        //console.log('hello ')
         // thats how we're going to access our yelp API
         // we're specifically making a get type HTTP request and we want to access the /search route
         // this /search route will be concatenated with the baseURL inside of our yelp.js file
